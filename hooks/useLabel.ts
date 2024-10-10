@@ -20,7 +20,6 @@ export function useLabel() {
       fetch(`${process.env.EXPO_PUBLIC_BACKEND_URL}/api/mobile/todo/label`).then(async (response) => {
         const result = await response.json();
         setLabels(result.data)
-        console.log("INside fetch , ", result.data)
         setLoading(false);
         setActiveLabel(result[0]);
         await AsyncStorage.setItem('labels', JSON.stringify({ labels: result.data }));

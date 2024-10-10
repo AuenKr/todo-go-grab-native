@@ -9,7 +9,6 @@ export function useTodoList() {
   useEffect(() => {
     async function getTodos() {
       const cache: TodoCacheType | null = JSON.parse(await AsyncStorage.getItem("todos") || '{"todos":[]}');
-      console.log(cache || "Cache miss")
       if (cache) {
         setTodoList(cache.todos);
         setLoading(false);
