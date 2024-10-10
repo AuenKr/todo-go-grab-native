@@ -12,6 +12,11 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+    "expo": {
+      "allowEnv": [
+        "*"
+      ]
+    },
     "ios": {
       "supportsTablet": true
     },
