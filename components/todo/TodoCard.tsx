@@ -15,7 +15,11 @@ export function TodoCard({ todo }: { todo: Todo }) {
               <MarkTodoState todo={todo} />
             </StyleView>
             <StyleView className="flex-1">
-              <StyleText className="text-base flex-wrap">
+              <StyleText
+                className={
+                  "text-base flex-wrap " + (todo.completed && "line-through")
+                }
+              >
                 {todo.title}
               </StyleText>
             </StyleView>

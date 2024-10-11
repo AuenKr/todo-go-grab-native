@@ -1,6 +1,5 @@
-import { Modal, Pressable, SafeAreaView, Text, TextInput, View } from "react-native";
+import { Button, Modal, Pressable, SafeAreaView, ScrollView, Text, TextInput, View } from "react-native";
 import { styled } from 'nativewind';
-import Checkbox from "expo-checkbox";
 
 export const StyleText = styled(Text);
 
@@ -12,4 +11,8 @@ export const StylePressable = styled(Pressable);
 
 export const StyleModal = styled(Modal);
 
-export const StyleInput = styled(TextInput)
+export const StyleInput = styled(TextInput);
+
+export const StyleButton = styled(Button);
+
+export const StyleScrollView = styled(ScrollView);

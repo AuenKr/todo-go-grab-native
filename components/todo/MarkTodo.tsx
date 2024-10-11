@@ -7,7 +7,6 @@ export function MarkTodoState({ todo }: { todo: Todo }) {
   const setTodoState = useSetRecoilState(todoListAtom);
 
   const onClickHandler = async () => {
-    console.log("Btn Clicked");
     const tempTodo: Todo = { ...todo, completed: !todo.completed };
     setTodoState((prev) => {
       const allTodo = prev.map((each) => {
