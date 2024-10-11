@@ -13,7 +13,7 @@ import { Todo } from "@/state/atom/todoListAtom";
 import { useLocalSearchParams } from "expo-router";
 import { Plus } from "lucide-react-native";
 import { useEffect, useState } from "react";
-import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
+import { useRecoilValue } from "recoil";
 
 export default function TodoList() {
   const { labelId } = useLocalSearchParams();

@@ -59,7 +59,6 @@ export function CreateTodo({
         }
       );
       const result = await response.json();
-      console.log("Created todo : ", result);
       if (result) {
         setTodo((prev) => {
           const data = prev.filter((each) => each.id != tempTodo.id);
@@ -76,6 +75,9 @@ export function CreateTodo({
   };
   return (
     <StyleView className="flex flex-1 justify-center">
+      <StyleText className="text-2xl font-bold text-center">
+        Add Todo - {activeLabel.name}
+      </StyleText>
       <StyleView className="border-2 m-3 p-2 rounded-xl space-y-2">
         <StyleView className="gap-2">
           <StyleView className="flex flex-row justify-between">
