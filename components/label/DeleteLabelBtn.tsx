@@ -1,32 +1,32 @@
-import { Todo, todoListAtom } from "@/state/atom/todoListAtom";
+import { Label, todoLabelAtom } from "@/state/atom/todoLabelAtom";
 import { useSetRecoilState } from "recoil";
 import { StylePressable, StyleView } from "../style";
 import { Trash2 } from "lucide-react-native";
 
-export function DeleteTodoButton({ todo }: { todo: Todo }) {
-  const setTodoState = useSetRecoilState(todoListAtom);
+export function DeleteLabelButton({ label }: { label: Label }) {
+  const setLabelState = useSetRecoilState(todoLabelAtom);
 
   const onClickHandler = async () => {
-    setTodoState((prev) => {
-      const allTodo = prev.filter((each) => {
-        if (each.id === todo.id) return false;
+    setLabelState((prev) => {
+      const allLabel = prev.filter((each) => {
+        if (each.id === label.id) return false;
         return true;
       });
 
-      return allTodo;
+      return allLabel;
     });
 
     const response = await fetch(
-      `${process.env.EXPO_PUBLIC_BACKEND_URL}/api/mobile/todo`,
+      `${process.env.EXPO_PUBLIC_BACKEND_URL}/api/mobile/todo/label`,
       {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(todo),
+        body: JSON.stringify(label),
       }
     );
-    const result = await response.json();
+    await response.json();
   };
 
   return (

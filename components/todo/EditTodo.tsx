@@ -60,7 +60,7 @@ export function EditTodoBtn({ todo }: { todo: Todo }) {
       );
 
       const result = await response.json();
-      console.log("Result updated : ", result);
+
       if (result) {
         setNewTask("");
         setNewDescription("");
